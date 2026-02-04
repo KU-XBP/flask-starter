@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, request, session, redirect,flash, url_for
 
 app = Flask(__name__)
@@ -11,7 +10,14 @@ def index():
     ##index.htmlがレンダリングされる
     return render_template("index.html")
 
+#AIでコードを生成した、
+# if __name__ == '__main__':
+#     app.run()
+# という記述は消す
+
 # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+#ここは絶対触らない
+import os
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 3000))
     app.run(host="0.0.0.0", port=port)
